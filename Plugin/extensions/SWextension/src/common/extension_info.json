@@ -1,17 +1,17 @@
 {
     "content_scripts": [ "content.js"
 ], 
-    "description": "Extension description", 
-    "creator": "Kango", 
+    "description": "Student World", 
+    "creator": "Student.World", 
     "background_scripts": [
         "main.js"
     ], 
-    "homepage_url": "http://kangoextensions.com/", 
-    "version": "0.9.0", 
+    "homepage_url": "http://student.world/", 
+    "version": "0.1", 
     "browser_button": {
-        "caption": "Kango", 
-        "icon": "icons/button.png", 
-        "tooltipText": "Kango"
+        "caption": "Student.world", 
+        "icon": "icons/icon.png", 
+        "tooltipText": "Student.World"
     }, 
     "name": "Student World"
 }
