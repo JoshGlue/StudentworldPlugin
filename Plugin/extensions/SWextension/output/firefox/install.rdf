@@ -2,7 +2,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>{2A9F0BF2-B717-4B9C-8EA9-956ADF3E0791}</em:id>
         <em:name>Student World</em:name>
-        <em:version>0.9.0</em:version>
+        <em:version>0.1</em:version>
         <em:targetApplication>
             <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
@@ -11,9 +11,9 @@
             </Description>
         </em:targetApplication>
         <em:bootstrap>true</em:bootstrap>
-        <em:description>Extension description</em:description>
-        <em:creator>Kango</em:creator>
-        <em:homepageURL>http://kangoextensions.com/</em:homepageURL>
+        <em:description>Student World</em:description>
+        <em:creator>Student.World</em:creator>
+        <em:homepageURL>http://student.world/</em:homepageURL>
         <em:iconURL>chrome://kango-2a9f0bf2-b717-4b9c-8ea9-956adf3e0791/content/icons/icon32.png</em:iconURL>
         
         

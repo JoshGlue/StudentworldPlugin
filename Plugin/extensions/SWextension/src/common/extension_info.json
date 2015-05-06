@@ -1,9 +1,9 @@
 {
-    "content_scripts": [ "content.js"
-], 
+    "content_scripts": [ ], 
     "description": "Student World", 
     "creator": "Student.World", 
     "background_scripts": [
+        "jquery.min.js",
         "main.js"
     ], 
     "homepage_url": "http://student.world/", 
@@ -13,5 +13,8 @@
         "icon": "icons/icon.png", 
         "tooltipText": "Student.World"
     }, 
-    "name": "Student World"
+    "name": "Student World",
+    "permissions": {
+        "notifications": true
+    }
 }

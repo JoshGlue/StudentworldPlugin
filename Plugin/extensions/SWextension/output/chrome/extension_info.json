@@ -1,20 +1,19 @@
 {
-    "content_scripts": [
-        "content.js"
-    ], 
-    "description": "Extension description", 
-    "creator": "Kango", 
+    "content_scripts": [], 
+    "description": "Student World", 
+    "creator": "Student.World", 
     "framework_version": "1.7.6 e5b39c50d196", 
     "background_scripts": [
+        "jquery.min.js", 
         "main.js"
     ], 
-    "homepage_url": "http://kangoextensions.com/", 
-    "version": "0.9.0", 
+    "homepage_url": "http://student.world/", 
+    "version": "0.1", 
     "framework_package_id": "dev", 
     "browser_button": {
-        "caption": "Kango", 
-        "tooltipText": "Kango", 
-        "icon": "icons/button.png"
+        "caption": "Student.world", 
+        "tooltipText": "Student.World", 
+        "icon": "icons/icon.png"
     }, 
     "id": "bopnhbjkehhehldhngbolnhagniegkem", 
     "name": "Student World"
