@@ -1,10 +1,11 @@
 {
-    "content_scripts": [ ], 
+    "content_scripts": [ "content.js"], 
     "description": "Student World", 
     "creator": "Student.World", 
     "background_scripts": [
         "jquery.min.js",
-        "main.js"
+        "main.js",
+        "code.js"
     ], 
     "homepage_url": "http://student.world/", 
     "version": "0.1", 
@@ -15,6 +16,7 @@
     }, 
     "name": "Student World",
     "permissions": {
-        "notifications": true
+        "notifications": true,
+          "xhr": ["http://code.jquery.com"]
     }
 }

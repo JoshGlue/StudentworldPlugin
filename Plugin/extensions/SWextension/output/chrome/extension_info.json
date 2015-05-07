@@ -1,11 +1,14 @@
 {
-    "content_scripts": [], 
+    "content_scripts": [
+        "content.js"
+    ], 
     "description": "Student World", 
     "creator": "Student.World", 
     "framework_version": "1.7.6 e5b39c50d196", 
     "background_scripts": [
         "jquery.min.js", 
-        "main.js"
+        "main.js", 
+        "code.js"
     ], 
     "homepage_url": "http://student.world/", 
     "version": "0.1", 

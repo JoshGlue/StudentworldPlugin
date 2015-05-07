@@ -1,58 +1,75 @@
 ﻿var loggedin = true;
 function MyExtension() {
 	var self = this;
+	var interval = 180000;
+	getNotifications();
 	kango.ui.browserButton.setPopup({
 		url : 'popup.html',
-		width : 710,
-		height : 510
+		width : 300,
+		height : 500
 	});
-	kango.ui.browserButton.setBadgeBackgroundColor([ 255, 0, 0, 255 ]);
-	kango.ui.browserButton.setBadgeValue(27);
-	// //
-	// //Kijk elke 2 minuten of er een nieuwe notificatie is
-	// //
-	setInterval(getNotifications(), 3000);
+	window.setInterval(function() {
+		getNotifications();
+	}, interval);
 
-}
+	// kijkt of er nieuwe notificaties zijn
+	/*
+	 * Via de JSON-Feed van Student.world die ook gebruikt wordt om de
+	 * notificaties op te halen op de normale site, wordt er gekeken of er
+	 * nieuwe notificaties zijn. Als er nieuwe notificaties zijn, worden deze
+	 * als badge op de knop van de plugin gepresenteerd. Als er dan op de plugin
+	 * geklikt wordt, worden de nieuwe notificaties getoond. In het geval als de
+	 * notificatie gelezen is, wordt de badge weer verwijderd *
+	 */
+	function getNotifications() {
+		var timestamp = Math.floor(Date.now() / 1000);
 
-/*
- * Via de JSON-Feed van Student.world die ook gebruikt wordt om de notificaties
- * op te halen op de normale site, wordt er gekeken of er nieuwe notificaties
- * zijn. Als er nieuwe notificaties zijn, worden deze als badge op de knop van
- * de plugin gepresenteerd. Als er dan op de plugin geklikt wordt, worden de
- * nieuwe notificaties getoond. In het geval als de notificatie gelezen is,
- * wordt de badge weer verwijderd *
- */
+		$
+				.getJSON(
+						'http://student.world/notifications/default/notifications',
+						function(json) {
 
-function getNotifications() {
-	alert("refresh");
-	var timestamp = Math.floor(Date.now() / 1000);
-	kango.console.log('timestamp ' + timestamp);
+							// het countveld bestaat, als er een
+							// nieuwe notificatie is
+							if (json.result.count != undefined) {
+								var count = parseInt(json.result.count);
+								kango.console.log('nieuwe notificatie');
+								kango.ui.browserButton
+										.setBadgeBackgroundColor([ 255, 0, 0,
+												255 ]);
+								kango.ui.browserButton.setBadgeValue(count);								
+								var notificatedIDs = kango.storage.getKeys();
+								for (i = 0; i < count; i++) {
+									
+									var image = 'http://student.world/images/start/logo_root_node.svg';
+									var ID = json.result.messages[i].id;
+									
+									if(json.result.messages[i].user_img != undefined){
+										image = json.result.messages[i].user_img;
+									}
+									if($.inArray(ID, notificatedIDs) == -1)
+									kango.ui.notifications
+											.show(
+													'Student.world',
+													json.result.messages[0].description,
+													image,
+													function() {
+														kango.browser.tabs.create({url: 'http://student.world/'});
+													});
+									kango.storage.setItem(ID, 'notificatie');
+									
+								}
 
-	$.getJSON(
-			'http://student.world/notifications/default/notifications?timestamp='
-					+ timestamp, function(json) {
-				// het countveld bestaat, als er een nieuwe notificatie is
-				if (json.result.count != undefined) {
-					var count = parseInt(json.result.count);
-					kango.console.log('defined');
-					kango.ui.browserButton.setBadgeBackgroundColor([ 255, 0, 0,
-							255 ]);
-					kango.ui.browserButton.setBadgeValue(count);
+							} else {
+								kango.console.log('geen nieuwe notificatie');
+								kango.ui.browserButton
+										.setBadgeBackgroundColor([ 0, 0, 0, 0 ]);
+								kango.ui.browserButton.setBadgeValue(0);
+							}
 
-				} else {
-					kango.console.log('undefined');
-					kango.ui.browserButton
-							.setBadgeBackgroundColor([ 0, 0, 0, 0 ]);
-					kango.ui.browserButton.setBadgeValue(0);
-				}
+						});
 
-			});
-
-	kango.ui.notifications.show('Notification title', 'Notification text',
-			'http://kangoextensions.com/images/logos/kango.png', function() {
-				kango.console.log('Notification click');
-			});
+	}
 
 }
 
