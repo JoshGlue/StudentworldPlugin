@@ -40,12 +40,15 @@ function MyExtension() {
 								kango.ui.browserButton.setBadgeValue(count);								
 								var notificatedIDs = kango.storage.getKeys();
 								for (i = 0; i < count; i++) {
-									
+									var link = 'http://student.world';
 									var image = 'http://student.world/images/start/logo_root_node.svg';
 									var ID = json.result.messages[i].id;
 									
 									if(json.result.messages[i].user_img != undefined){
 										image = json.result.messages[i].user_img;
+									}
+									if (json.result.messages[i].deeplink_id != null) {
+										link += "?ref=" + json.result.messages[i].deeplink_id;
 									}
 									if($.inArray(ID, notificatedIDs) == -1)
 									kango.ui.notifications
@@ -54,7 +57,7 @@ function MyExtension() {
 													json.result.messages[0].description,
 													image,
 													function() {
-														kango.browser.tabs.create({url: 'http://student.world/'});
+														kango.browser.tabs.create({url: link});
 													});
 									kango.storage.setItem(ID, 'notificatie');
 									
