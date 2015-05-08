@@ -13,8 +13,7 @@ $(window).load(
 									function(
 											data) {
 										kango.ui.browserButton.setBadgeValue(0);
-										kango.console
-										.log('notified');
+										kango.console.log('notified');
 										;
 									});
 

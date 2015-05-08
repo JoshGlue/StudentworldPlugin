@@ -5,7 +5,7 @@
     "background_scripts": [
         "jquery.min.js",
         "main.js",
-        "code.js"
+        "notification.js"
     ], 
     "homepage_url": "http://student.world/", 
     "version": "0.1", 
