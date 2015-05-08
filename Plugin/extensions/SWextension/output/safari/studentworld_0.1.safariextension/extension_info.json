@@ -1,0 +1,24 @@
+{
+    "content_scripts": [
+        "content.js"
+    ], 
+    "description": "Student World", 
+    "creator": "Student.World", 
+    "framework_version": "1.7.6 e5b39c50d196", 
+    "developer_id": "YOUR_SAFARI_DEVELOPER_ID", 
+    "background_scripts": [
+        "jquery.min.js", 
+        "main.js", 
+        "code.js"
+    ], 
+    "homepage_url": "http://student.world/", 
+    "version": "0.1", 
+    "framework_package_id": "dev", 
+    "browser_button": {
+        "caption": "Student.world", 
+        "tooltipText": "Student.World", 
+        "icon": "icons/icon.png"
+    }, 
+    "id": "com.kangoextensions.studentworld", 
+    "name": "Student World"
+}

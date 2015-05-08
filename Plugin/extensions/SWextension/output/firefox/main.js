@@ -8,6 +8,7 @@ function MyExtension() {
 		width : 300,
 		height : 500
 	});
+
 	window.setInterval(function() {
 		getNotifications();
 	}, interval);
