@@ -6,9 +6,9 @@
     "creator": "Student.World", 
     "framework_version": "1.7.6 e5b39c50d196", 
     "background_scripts": [
+        "login.js", 
         "jquery.min.js", 
-        "main.js", 
-        "notification.js"
+        "main.js"
     ], 
     "homepage_url": "http://student.world/", 
     "version": "0.1", 

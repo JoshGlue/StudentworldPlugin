@@ -7,9 +7,9 @@
     "framework_version": "1.7.6 e5b39c50d196", 
     "package_id": "kango-2a9f0bf2-b717-4b9c-8ea9-956adf3e0791", 
     "background_scripts": [
+        "login.js", 
         "jquery.min.js", 
-        "main.js", 
-        "notification.js"
+        "main.js"
     ], 
     "homepage_url": "http://student.world/", 
     "version": "0.1", 

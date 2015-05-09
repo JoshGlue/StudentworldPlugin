@@ -40,6 +40,6 @@
         "contextMenus", 
         "webNavigation", 
         "notifications", 
-        "http://code.jquery.com"
+        "https://student.world/"
     ]
 }

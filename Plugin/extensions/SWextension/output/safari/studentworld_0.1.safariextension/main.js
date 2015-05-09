@@ -11,7 +11,7 @@ function MyExtension() {
 	var interval = 180000;
 	// voor de eerste keer moet er gekeken worden of er nieuwe notificaties
 	// zijn.
-	getNotifications();
+	getNotificationsBG();
 	// instellen dat dit html-bestand geopend moet worden.
 	kango.ui.browserButton.setPopup({
 		url : 'popup.html',
@@ -20,7 +20,7 @@ function MyExtension() {
 	});
 	// hier wordt om de zoveel tijd gekeken of er nieuwe notificaties zijn
 	window.setInterval(function() {
-		getNotifications();
+		getNotificationsBG();
 	}, interval);
 
 	// kijkt of er nieuwe notificaties zijn
@@ -33,7 +33,7 @@ function MyExtension() {
 	 * getoond. In het geval als de notificatie gelezen is, wordt de badge weer
 	 * verwijderd.
 	 */
-	function getNotifications() {
+	function getNotificationsBG() {
 		// jsonfeed wordt opgehaald
 		$
 				.getJSON(
@@ -123,7 +123,6 @@ function MyExtension() {
 
 							} else {
 								kango.console.log('Jsonfeed niet goed opgehaald');
-
 							}
 
 						});

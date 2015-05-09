@@ -9,6 +9,8 @@
 <script type="text/javascript" src="kango-ui/kango_api.js"></script>
 <script src="jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>
+<!-- Het javascriptbestand dat verantwoordelijk is voor het inloggen-->
+<script src="login.js"></script>
 <!-- Het javascriptbestand dat verantwoordelijk is voor het tonen van de notificaties in de plugin-->
 <script src="notification.js"></script>
 </head>
@@ -20,7 +22,7 @@
 			src="http://student.world/images/logo_student.world_stacked_transparent.png" /></a>
 	</div>
 	<div class="panel-group" id="accordion">
-		<div class="panel panel-default">
+		<div class="panel panel-default notifications">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" id="notificationHeader"
@@ -35,7 +37,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default">
+		<div class="panel panel-default newItem">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -54,17 +56,16 @@
 					consequat.</div>
 			</div>
 		</div>
-		<div class="panel panel-default">
+		<div class="panel panel-default login">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#collapse3">login(niet werkend)</a>
 				</h4>
 			</div>
-			<div id="collapse3" class="panel-collapse collapse">
+			<div id="collapse3" class="panel-collapse collapse in">
 				<div class="panel-body">
-					<form class="sw-form minimal" id="login_form554be769ec78a"
-						action="http://student.world/site/start" method="post">
+					<form class="sw-form minimal" id="login_form554be769ec78a" action="https://student.world/user/login" method="post">
 
 						<div class="errorSummary alert alert-warning"
 							style="display: none;"></div>
@@ -100,7 +101,7 @@
 										Keep me logged in</label>
 								</div>
 								<div class="right">
-									<a id="ajax_rec554be769ec78a" class="small" href="#">Forgot
+									<a id="ajax_rec554be769ec78a" class="small link" href="#">Forgot
 										password</a>
 								</div>
 							</div>

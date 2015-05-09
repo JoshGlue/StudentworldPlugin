@@ -3,6 +3,7 @@
 body {
 	width: 300px;
 	height: 500px !important;
+	overflow-x: hidden;
 }
 
 .logo {
@@ -34,4 +35,8 @@ body {
 	width: 200px;
     padding-left: 5px;
 	float: left; /* add this */
+}
+
+.login{
+	display:none;
 }

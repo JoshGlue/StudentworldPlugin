@@ -3,9 +3,9 @@
     "description": "Student World", 
     "creator": "Student.World", 
     "background_scripts": [
+    "login.js",
         "jquery.min.js",
-        "main.js",
-        "notification.js"
+        "main.js"
     ], 
     "homepage_url": "http://student.world/", 
     "version": "0.1", 
@@ -17,6 +17,6 @@
     "name": "Student World",
     "permissions": {
         "notifications": true,
-          "xhr": ["http://code.jquery.com"]
+          "xhr": ["https://student.world/"]
     }
 }
