@@ -10,7 +10,7 @@ $(document).ready(function() {
 		var data = $('#login_form554be769ec78a').serialize();
 		var post = $.post('https://student.world/user/login', data);
 		post.done(function(data) {
-			showNotifications();
+			getNotifications();
 		})
 	})
 })
@@ -24,5 +24,4 @@ function showNotifications() {
 	$('.login').hide();
 	$('.notifications').show(300);
 	$('.newItem').show(300);
-	getNotifications();
 }

@@ -13,6 +13,7 @@
 <script src="login.js"></script>
 <!-- Het javascriptbestand dat verantwoordelijk is voor het tonen van de notificaties in de plugin-->
 <script src="notification.js"></script>
+<script src="item.js"></script>
 </head>
 <body>
 
@@ -29,11 +30,11 @@
 						data-parent="#accordion" href="#collapse1">Notificaties</a>
 				</h4>
 			</div>
-			<div id="collapse1" class="panel-collapse collapse in">
+			<div id="collapse1" class="panel-collapse collapse">
 				<div class="panel-body" id="notifications">
-				<!-- notification.js zorgt ervoor dat de notificaties hier getoond worden. -->
-				
-				
+					<!-- notification.js zorgt ervoor dat de notificaties hier getoond worden. -->
+
+
 				</div>
 			</div>
 		</div>
@@ -44,28 +45,104 @@
 						href="#collapse2">Item Toevoegen</a>
 				</h4>
 			</div>
-			<div id="collapse2" class="panel-collapse collapse">
-				<div class="panel-body">Lorem ipsum dolor sit amet,
-					consectetur adipisicing elit, sed do eiusmod tempor incididunt t ut
-					labore et ut labore et ut labore et ut labore et ut labore et ut
-					labore et ut labore et ut labore et ut labore et ut labore et ut
-					labore et ut labore et ut labore et ut labore et ut labore et ut
-					labore et ut labore et ut labore et ut labore et ut labore eut
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</div>
+			<div id="collapse2" class="panel-collapse collapse in">
+				<div class="panel-body">
+
+					<form enctype="multipart/form-data" class="sw-form clearfix"
+						id="create-form" action="/categories/profileCreate" method="post">
+
+						<div class="col-xs-12 alert alert-warning" id="error_form"
+							style="display: none;"></div>
+
+						<div class="form-group has-feedback" id="cat_row">
+							<div class="col-sm-12">
+								<div class="input-group">
+									<!--<span class="input-group-addon">1</span>-->
+									<div>
+										<input placeholder="www.linkvanjouwitem.nl"
+											class="form-control" autocomplete="off" id="Categories_link"
+											size="40" maxlength="250" name="Categories[link]" type="text">
+										<span class="fa fa-exclamation form-control-feedback fa-lg"></span>
+									</div>
+									<span class="input-group-addon"></span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Titel -->
+						<div class="form-group has-feedback">
+							<div class="col-sm-12">
+								<div class="input-group">
+									<div>
+										<input placeholder="Schrijf een titel voor je nieuwe item"
+											id="Categories_name" autocomplete="off"
+											class="form-control title-field" size="40"
+											name="Categories[name]" type="text" maxlength="40"> <span
+											class="fa fa-exclamation form-control-feedback fa-lg title-field"
+											style="line-height: 45px;"></span>
+									</div>
+									<span class="input-group-addon">
+										<div id="input_title" class=""></div>
+									</span>
+								</div>
+							</div>
+
+						</div>
+						<!-- description -->
+
+
+						<div class="form-group has-feedback" id="desc">
+							<div id="descr" class="col-sm-6 col-md-8">
+
+								<div class="input-group">
+									<div>
+										<textarea
+											placeholder="Wat is er zo interessant aan dit item? (Verplicht)"
+											rows="7" cols="5" id="Categories_recommendation"
+											class="form-control description"
+											name="Categories[recommendation]"></textarea>
+										<span class="fa fa-exclamation form-control-feedback fa-lg"></span>
+									</div>
+									<span class="input-group-addon"><div
+											id="textarea_recommendation" class=""></div> </span>
+								</div>
+
+							</div>
+						</div>
+
+
+						<br>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button class="btn btn-primary btn-fw" id="btn_create">Voeg
+									toe</button>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="line" style="margin-top: 5px; margin-bottom: 20px;"></div>
+						</div>
+
+					</form>
+
+
+
+
+
+
+				</div>
 			</div>
 		</div>
 		<div class="panel panel-default login">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
-						href="#collapse3">login(niet werkend)</a>
+						href="#collapse3">Inloggen</a>
 				</h4>
 			</div>
 			<div id="collapse3" class="panel-collapse collapse in">
 				<div class="panel-body">
-					<form class="sw-form minimal" id="login_form554be769ec78a" action="https://student.world/user/login" method="post">
+					<form class="sw-form minimal" id="login_form554be769ec78a"
+						action="https://student.world/user/login" method="post">
 
 						<div class="errorSummary alert alert-warning"
 							style="display: none;"></div>
@@ -92,7 +169,7 @@
 							<p class="hint"></p>
 							<div class="clearfix meta">
 
-								<div class="left">
+								<div class="container">
 									<label class="small rememberMe" for="Userlogin_rememberMe"><input
 										id="ytUserLogin_rememberMe" type="hidden" value="0"
 										name="UserLogin[rememberMe]"><input class="rememberMe"
@@ -100,10 +177,7 @@
 										id="UserLogin_rememberMe" value="1" type="checkbox">
 										Keep me logged in</label>
 								</div>
-								<div class="right">
-									<a id="ajax_rec554be769ec78a" class="small link" href="#">Forgot
-										password</a>
-								</div>
+
 							</div>
 						</div>
 

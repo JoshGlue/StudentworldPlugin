@@ -2,7 +2,7 @@
 
 body {
 	width: 300px;
-	height: 500px !important;
+	height: 540px !important;
 	overflow-x: hidden;
 }
 
@@ -36,7 +36,23 @@ body {
     padding-left: 5px;
 	float: left; /* add this */
 }
+.notifications{
+	display:none;
+	
+}
+.newItem{
+	display:none;
+}
 
 .login{
 	display:none;
+}
+.btn-primary{
+	width: 100%;
+}
+.description{
+	height:100px !important;
+}
+form-control{
+	padding-right: initial !important;
 }
