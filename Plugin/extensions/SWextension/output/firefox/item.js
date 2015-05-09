@@ -60,21 +60,14 @@ $(document).ready(function(){
 																	.addClass("alert-warning");
 							
        						 $('#error_form').html(data.errors);
-						//	 $("#error_form").fadeOut(5000);
-							 $(this).innerHTML = 'Voeg hier toe';
-
-							 //refresh iscroll
-							 if($( "#backend-content" ).data( "IScroll" ) !== undefined){
-									$( "#backend-content" ).data( "IScroll" ).refresh();
-							 }
+		
 							 
 						}else if(data.success){
-
-							//postmessage
-							window.top.postMessage('{"message":"' + data.message + '"}', '*');	
+$('#error_form').show();
 							$('#error_form').removeClass("alert-warning");
 							$('#error_form').addClass("alert-success");
-							$('#error_form').text('Toegevoegd!');
+						var link = "http://student.world/?ref=" + data.node_id;
+       						 $('#error_form').html('Toegevoegd!. Bekijk het <a class="link alert-link" href="' + link+ '">hier</a> op Student.world');
 
 						}
                 	}   
@@ -86,4 +79,3 @@ $(document).ready(function(){
 	
 	
 })
-

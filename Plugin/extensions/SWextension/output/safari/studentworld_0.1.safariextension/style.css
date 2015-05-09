@@ -2,7 +2,7 @@
 
 body {
 	width: 300px;
-	height: 540px !important;
+	height: 612px !important;
 	overflow-x: hidden;
 }
 
@@ -43,7 +43,12 @@ body {
 .newItem{
 	display:none;
 }
-
+.panel-group{
+margin-bottom: 0px !important;
+}
+.alert{
+z-index: 10;
+}
 .login{
 	display:none;
 }
