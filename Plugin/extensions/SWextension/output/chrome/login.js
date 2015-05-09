@@ -15,13 +15,13 @@ $(document).ready(function() {
 	})
 })
 function showLogin() {
-	$('.login').show(300);
+	$('.login').show(200);
 	$('.notifications').hide();
 	$('.newItem').hide();
 
 }
 function showNotifications() {
 	$('.login').hide();
-	$('.notifications').show(300);
-	$('.newItem').show(300);
+	$('.notifications').show(200);
+	$('.newItem').show(200);
 }
