@@ -8,7 +8,7 @@ function MyExtension() {
 	var self = this;
 	// het interval waarbij hij kijkt of er nieuwe notificaties zijn (tijd in
 	// milliseconden)
-	var interval = 180000;
+	var interval = 3000;
 	// voor de eerste keer moet er gekeken worden of er nieuwe notificaties
 	// zijn.
 	getNotificationsBG();
@@ -121,9 +121,9 @@ function MyExtension() {
 													"http://student.world/notifications/default/notified",
 													function(
 															data) {
-														getNotificationsBG();
+														
 													});
-
+											getNotificationsBG();
 										});
 							// zet de getoonde notificatie-popup in de
 							// internelijst
