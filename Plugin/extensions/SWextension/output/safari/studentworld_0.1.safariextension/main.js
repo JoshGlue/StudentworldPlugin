@@ -16,7 +16,7 @@ function MyExtension() {
 	kango.ui.browserButton.setPopup({
 		url : 'popup.html',
 		width : 300,
-		height : 612
+		height : 620
 	});
 	// hier wordt om de zoveel tijd gekeken of er nieuwe notificaties zijn
 	window.setInterval(function() {

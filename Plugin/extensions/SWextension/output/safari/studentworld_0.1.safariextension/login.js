@@ -10,7 +10,16 @@ $(document).ready(function() {
 		var data = $('#login_form554be769ec78a').serialize();
 		var post = $.post('https://student.world/user/login', data);
 		post.done(function(data) {
-			getNotifications();
+		var success =	getNotifications();
+		
+	if(success == 0){
+		$('#error_form').removeClass("alert-warning");
+		$('#error_form').removeClass("alert-success");
+		$('#error_form').addClass("alert-danger");
+		 $('#error_form').html('Oeps, er is iets fout gegaan met inloggen.');
+			$('#error_form').show();
+	}
+			
 		})
 	})
 })
