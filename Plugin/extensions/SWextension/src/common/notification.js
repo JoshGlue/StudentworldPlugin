@@ -50,10 +50,13 @@ $(document).ready(function() {
     });
 });
 /* Functie lijkt heel erg op getNotificationsBG() in main.js, zie die beschrijving.*/
-function getNotifications() {
-    var result = false;
+function getNotifications(callback) {
     $.getJSON('http://student.world/notifications/default/notifications', function(json) {
+    	if(callback){
+    		callback(json.status);
+    	}
         if (json.status == 1) {
+        	
             var count = json.result.count;
             //Het error_form kan nog zichtbaar zijn, bijvoorbeeld wanneer een persoon foutief heeft ingelogd
             //, maar nu wel goed heeft ingelogd.
@@ -97,13 +100,10 @@ function getNotifications() {
             showNotifications();
             //In showLogin(login.js) wordt er gekeken of het gelukt is met inloggen, wanneer de notificaties
             //niet opgehaald kunnen worden, betekent dit dat het inloggen niet is gelukt
-            result = true;
         } else {
-            result = false;
             //Laat het login scherm zien en verbergt de notificaties en het item toevoegen
             //, wanneer de notificaties niet opgehaald kunnen worden
             showLogin();
         }
-    });
-    return result;
+    }); 
 }

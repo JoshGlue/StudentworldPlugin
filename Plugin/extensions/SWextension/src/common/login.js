@@ -8,18 +8,20 @@ $(document).ready(function() {
         var post = $.post('https://student.world/user/login', data);
         post.done(function(data) {
         	//De notificaties worden ingesteld, wanneer dit niet kon, geeft getNotifications een boolean waarde terug.
-            var success = getNotifications();
+            getNotifications(function(status){
+            	 if (status != 1) {
+                     $('#error_form').removeClass("alert-warning");
+                     $('#error_form').removeClass("alert-success");
+                     $('#error_form').addClass("alert-danger");
+                     $('#error_form').html('Oeps, er is iets fout gegaan met inloggen.');
+                     $('#error_form').show();
+                 }
+            	 });
             /* Het #error_form-element wordt ook gebruikt om te laten zien dat een item is toegevoegd
              * of dat er iets mis is gegaan. De klassen alert-warning en alert-succes kunnen hier aan gekoppeld zijn
              * Er moet dus eerst voor gezorgd worden dat deze verwijderd zijn. Er wordt daarna gebruik gemaakt van
              * alert-danger en er wordt een bericht getoond. Voor bootstrap alerts, zie http://www.tutorialspoint.com/bootstrap/bootstrap_alerts.htm */
-            if (!success) {
-                $('#error_form').removeClass("alert-warning");
-                $('#error_form').removeClass("alert-success");
-                $('#error_form').addClass("alert-danger");
-                $('#error_form').html('Oeps, er is iets fout gegaan met inloggen.');
-                $('#error_form').show();
-            }
+           
         })
     })
 })
