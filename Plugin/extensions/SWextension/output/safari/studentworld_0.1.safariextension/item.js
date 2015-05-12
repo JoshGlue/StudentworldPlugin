@@ -40,17 +40,19 @@ $(document).ready(function() {
             data: $form.serialize(),
             dataType: 'json',
             success: function(data) {
-                if (data.errors) {
-                    $('#error_form').show();
+                if (data.errors) { 
+                	 $('#error_form').removeClass("alert-danger");
                     $('#error_form').removeClass("alert-success");
                     $('#error_form').addClass("alert-warning");
                     $('#error_form').html(data.errors);
-                } else if (data.success) {
                     $('#error_form').show();
+                } else if (data.success) {
+                	 $('#error_form').removeClass("alert-danger");
                     $('#error_form').removeClass("alert-warning");
                     $('#error_form').addClass("alert-success");
                     var link = "http://student.world/?ref=" + data.node_id;
                     $('#error_form').html('Toegevoegd!. Bekijk het <a class="link alert-link" href="' + link + '">hier</a> op Student.world');
+                    $('#error_form').show();
                 }
             }
         });
