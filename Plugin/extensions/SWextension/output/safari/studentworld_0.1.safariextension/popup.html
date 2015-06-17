@@ -5,6 +5,7 @@
 <!-- bootstrap is een css/js-framework, waar gemakkelijk mooie websites gecreeerd kunnen worden -->
 <link rel="stylesheet" href="bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/font-awesome.css">
 <!-- Het javascriptbestand dat geladen moet worden om kango-commando's uit te voeren. De kango-commando's worden vooral uitgevoerd in notification.js -->
 <script type="text/javascript" src="kango-ui/kango_api.js"></script>
 <script src="jquery.min.js"></script>
@@ -48,7 +49,7 @@
 				</h4>
 			</div>
 			<div id="collapse2" class="panel-collapse collapse">
-				<div class="panel-body">
+				<div class="panel-body" style="padding-top: 15px !important;">
 <!-- zie item.js -->
 					<form enctype="multipart/form-data" class="sw-form clearfix"
 						id="create-form" action="/categories/profileCreate" method="post">
@@ -63,7 +64,7 @@
 										<input placeholder="www.linkvanjouwitem.nl"
 											class="form-control" autocomplete="off" id="Categories_link"
 											size="40" maxlength="250" name="Categories[link]" type="text">
-										<span class="fa fa-exclamation form-control-feedback fa-lg"></span>
+									
 									</div>
 									<span class="input-group-addon"></span>
 								</div>
@@ -78,9 +79,7 @@
 										<input placeholder="Schrijf een titel voor je nieuwe item"
 											id="Categories_name" autocomplete="off"
 											class="form-control title-field" size="40"
-											name="Categories[name]" type="text" maxlength="40"> <span
-											class="fa fa-exclamation form-control-feedback fa-lg title-field"
-											style="line-height: 45px;"></span>
+											name="Categories[name]" type="text" maxlength="40">
 									</div>
 									<span class="input-group-addon">
 										<div id="input_title" class=""></div>
@@ -102,7 +101,7 @@
 											rows="7" cols="5" id="Categories_recommendation"
 											class="form-control description"
 											name="Categories[recommendation]"></textarea>
-										<span class="fa fa-exclamation form-control-feedback fa-lg"></span>
+									
 									</div>
 									<span class="input-group-addon"><div
 											id="textarea_recommendation" class=""></div> </span>

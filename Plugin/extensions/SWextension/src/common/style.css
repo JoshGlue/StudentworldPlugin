@@ -13,11 +13,65 @@ body {
 .panel-title {
 	text-align: center;
 }
+.panel-heading{
+background-color: #999 !important;
+color: white !important;
+}
+
+.panel-group .panel+.panel {
+  margin-top: 0px !important; */
+}
+ 
+/* unvisited link */
+.panel-heading a:link {
+    color: white !important;
+}
+
+/* visited link */
+.panel-heading a:visited {
+    color: white !important;
+}
+
+/* mouse over link */
+.panel-heading a:hover {
+    color: white !important;
+}
+
+/* selected link */
+.panel-heading a:active {
+    color: white !important;
+}
+
+
+/* unvisited link */
+a:link {
+    color: #777 !important;
+}
+
+/* visited link */
+a:visited {
+    color: #777 !important;
+}
+
+/* mouse over link */
+a:hover {
+    color: #777 !important;
+}
+
+/* selected link */
+a:active {
+    color: #777 !important;
+}
 
 .notification {
-	width: 300px;
+	width: 270px;
 	overflow: hidden; /* will contain if #first is longer than #second */
-	padding-bottom: 5px;
+	padding: 5px;
+border-top: 1px solid #aaaaaa;
+
+}
+.panel-body{
+  background-color: #eeeeee;
 }
 
 .imagenotification img {
@@ -37,7 +91,7 @@ body {
 }
 .notifications{
 	display:none;
-	
+
 }
 .newItem{
 	display:none;
@@ -56,6 +110,10 @@ z-index: 10;
 }
 .description{
 	height:100px !important;
+}
+.descriptionNotification{
+	margin-top: 3px;
+	font-size: 9pt;
 }
 form-control{
 	padding-right: initial !important;
