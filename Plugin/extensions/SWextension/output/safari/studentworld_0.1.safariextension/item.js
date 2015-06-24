@@ -10,6 +10,26 @@ KangoAPI.onReady(function() {
 $(document).ready(function() {
 
     $('[rel="tooltip"]').tooltip();   
+	
+	$(function(){
+		$('#recommendationcounter').textCounter({
+			target: '#Categories_recommendation', // required: string
+			count: 100, // optional: integer [defaults 140]
+			alertAt: 20, // optional: integer [defaults 20]
+			warnAt: 10, // optional: integer [defaults 0]
+			stopAtLimit: false // optional: defaults to false
+		});
+	});
+	
+		$(function(){
+		$('#namecounter').textCounter({
+			target: '#Categories_name', // required: string
+			count: 40, // optional: integer [defaults 140]
+			alertAt: 20, // optional: integer [defaults 20]
+			warnAt: 10, // optional: integer [defaults 0]
+			stopAtLimit: false // optional: defaults to false
+		});
+	});
 
 	//Wanneer het veld verandert, dan worden de titel en link ingevuld die door de student.world-service
 	//getTitle wordt meegegeven.
@@ -24,9 +44,11 @@ $(document).ready(function() {
                 if (data.title) {
                     $('#Categories_name').val(data.title);
                     $('input#Categories_name').click();
+$('input#Categories_name').keyup();					
                 }
                 if (data.url) {
                     $('#Categories_link').val(data.url);
+					$('#Categories_link').click();
                 }
             }
         });

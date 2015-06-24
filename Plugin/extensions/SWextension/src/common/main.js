@@ -7,7 +7,7 @@ function MyExtension() {
     var self = this;
     // het interval waarbij hij kijkt of er nieuwe notificaties zijn (tijd in
     // milliseconden)
-    var interval = 180;
+    var interval = 180000;
     // voor de eerste keer moet er gekeken worden of er nieuwe notificaties
     // zijn.
     getNotificationsBG();

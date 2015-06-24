@@ -121,3 +121,8 @@ form-control{
 .tooltip-inner {
     white-space:pre-wrap;
 }
+.counter{
+text-align: right;
+font-size: 9pt;
+color: #959595;
+}
