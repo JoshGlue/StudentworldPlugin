@@ -8,6 +8,9 @@ KangoAPI.onReady(function() {
     });
 });
 $(document).ready(function() {
+
+    $('[rel="tooltip"]').tooltip();   
+
 	//Wanneer het veld verandert, dan worden de titel en link ingevuld die door de student.world-service
 	//getTitle wordt meegegeven.
     $('#Categories_link').change(function(event) {

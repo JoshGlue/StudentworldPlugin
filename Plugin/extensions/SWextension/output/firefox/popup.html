@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/tooltip.css">
 <!-- Het javascriptbestand dat geladen moet worden om kango-commando's uit te voeren. De kango-commando's worden vooral uitgevoerd in notification.js -->
 <script type="text/javascript" src="kango-ui/kango_api.js"></script>
 <script src="jquery.min.js"></script>
@@ -66,7 +67,7 @@
 											size="40" maxlength="250" name="Categories[link]" type="text">
 									
 									</div>
-									<span class="input-group-addon"></span>
+									<span class="input-group-addon"><i class="fa fa-question-circle" id="tooltip" rel="tooltip" title="Plaats hier de link van het item dat je wilt toevoegen." data-original-title=""></i></span>
 								</div>
 							</div>
 						</div>
@@ -82,7 +83,7 @@
 											name="Categories[name]" type="text" maxlength="40">
 									</div>
 									<span class="input-group-addon">
-										<div id="input_title" class=""></div>
+										<i class="fa fa-question-circle" id="tooltip" rel="tooltip" title="De titel van dit item wordt getoond in de navigatie. Max. 40 karakters." data-original-title=""></i>
 									</span>
 								</div>
 							</div>
@@ -103,8 +104,7 @@
 											name="Categories[recommendation]"></textarea>
 									
 									</div>
-									<span class="input-group-addon"><div
-											id="textarea_recommendation" class=""></div> </span>
+									<span class="input-group-addon"><i class="fa fa-question-circle" id="tooltip" rel="tooltip" title="Beschrijf waarom deze categorie interessant is. Max. 100 karakters." data-original-title=""></i></span>
 								</div>
 
 							</div>

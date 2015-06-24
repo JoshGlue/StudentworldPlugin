@@ -118,3 +118,6 @@ z-index: 10;
 form-control{
 	padding-right: initial !important;
 }
+.tooltip-inner {
+    white-space:pre-wrap;
+}

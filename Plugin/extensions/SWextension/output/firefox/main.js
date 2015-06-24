@@ -7,7 +7,7 @@ function MyExtension() {
     var self = this;
     // het interval waarbij hij kijkt of er nieuwe notificaties zijn (tijd in
     // milliseconden)
-    var interval = 180000;
+    var interval = 180;
     // voor de eerste keer moet er gekeken worden of er nieuwe notificaties
     // zijn.
     getNotificationsBG();
@@ -98,16 +98,26 @@ function MyExtension() {
                             if (json.result.messages[i].deeplink_id != null) {
                                 link += "?ref=" + json.result.messages[i].deeplink_id;
                             }
+							
+							
+						
+							
                             // Hier wordt gekeken of een
                             // notificatie-popup al een keer is getoond
                             // aan de gebruiker. -1 wordt teruggegeven
                             // als het ID niet voorkomt in de interne
                             // lijst.
                             if ($.inArray(ID, notificatedIDs) == -1)
+							{
+							
+							var title = 'Student.world';
+							if (json.result.messages[i].title != undefined){
+							title = title + ' - ' + json.result.messages[i].title;
+							}
                                 kango.ui.notifications
                                 .show(
-                                    'Student.world',
-                                    json.result.messages[0].description,
+                                    title,
+                                    json.result.messages[i].description,
                                     image,
                                     function() {
                                         kango.browser.tabs
@@ -127,7 +137,7 @@ function MyExtension() {
                             // zet de getoonde notificatie-popup in de
                             // internelijst
                             kango.storage.setItem(ID, 'notificatie');
-
+}
                         }
 
                     } else {
