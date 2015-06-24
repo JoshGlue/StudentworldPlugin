@@ -126,3 +126,6 @@ text-align: right;
 font-size: 9pt;
 color: #959595;
 }
+textarea {
+    resize: none;
+}
