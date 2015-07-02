@@ -1,4 +1,4 @@
-﻿/* Dit javascript bestand draait op de achtergrond.
+/* Dit javascript bestand draait op de achtergrond.
  * Dit script is verantwoordelijk voor het ophalen van nieuwe notificaties,
  *  als de gebruiker niet met de plugin bezig is.
  * 
@@ -7,7 +7,7 @@ function MyExtension() {
     var self = this;
     // het interval waarbij hij kijkt of er nieuwe notificaties zijn (tijd in
     // milliseconden)
-    var interval = 180000;
+    var interval = 18000;
     // voor de eerste keer moet er gekeken worden of er nieuwe notificaties
     // zijn.
     getNotificationsBG();

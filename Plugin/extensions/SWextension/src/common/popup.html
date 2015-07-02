@@ -1,197 +1,182 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- bootstrap is een css/js-framework, waar gemakkelijk mooie websites gecreeerd kunnen worden -->
-<link rel="stylesheet" href="bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/font-awesome.css">
-<!-- Het javascriptbestand dat geladen moet worden om kango-commando's uit te voeren. De kango-commando's worden vooral uitgevoerd in notification.js -->
-<script type="text/javascript" src="kango-ui/kango_api.js"></script>
-<script src="jquery.min.js"></script>
-<script src="jquery.textCounter-min.js" type="text/javascript"></script>
-<script src="bootstrap.min.js"></script>
-<!-- Het javascriptbestand dat verantwoordelijk is voor het inloggen-->
-<script src="login.js"></script>
-<!-- Het javascriptbestand dat verantwoordelijk is voor het tonen van de notificaties in de plugin-->
-<script src="notification.js"></script>
-<script src="item.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap is een css/js-framework, waar gemakkelijk mooie websites gecreeerd kunnen worden -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Het javascriptbestand dat geladen moet worden om kango-commando's uit te voeren. De kango-commando's worden vooral uitgevoerd in notification.js -->
+    <script type="text/javascript" src="kango-ui/kango_api.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.textCounter-min.js" type="text/javascript"></script>
+    <script src="bootstrap.min.js"></script>
+    <!-- Het javascriptbestand dat verantwoordelijk is voor het inloggen-->
+    <script src="login.js"></script>
+    <!-- Het javascriptbestand dat verantwoordelijk is voor het tonen van de notificaties in de plugin-->
+    <script src="notification.js"></script>
+    <script src="item.js"></script>
 </head>
+
 <body>
 
-	<div class="logo">
-		<a href="http://student.world/" class="link"><img
-			alt="Student.world" width="100%"
-			src="http://student.world/images/logo_student.world_stacked_transparent.png" /></a>
-	</div>
-		<div class="col-xs-12 alert alert-warning" id="error_form"
-							style="display: none;"></div>
-	<div class="panel-group" id="accordion">
-		<div class="panel panel-default notifications">
-			<div class="panel-heading">
-				<h4 class="panel-title">
+    <div class="logo">
+        <a href="http://student.world/" class="link"><img alt="Student.world" width="100%" src="http://student.world/images/logo_student.world_stacked_transparent.png" />
+        </a>
+    </div>
+    <div class="col-xs-12 alert alert-warning" id="error_form" style="display: none;"></div>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default notifications">
+            <div class="panel-heading">
+                <h4 class="panel-title">
 					<a data-toggle="collapse" class="sub" id="notificationHeader"
 						data-parent="#accordion" href="#collapse1">Notificaties</a>
 				</h4>
-			</div>
-			<div id="collapse1" class="panel-collapse collapse">
-				<div class="panel-body" id="notifications">
-					<!-- notification.js zorgt ervoor dat de notificaties hier getoond worden. -->
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body" id="notifications">
+                    <!-- notification.js zorgt ervoor dat de notificaties hier getoond worden. -->
 
 
-				</div>
-			</div>
-		</div>
-		<div class="panel panel-default newItem">
-			<div class="panel-heading">
-				<h4 class="panel-title">
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default newItem">
+            <div class="panel-heading">
+                <h4 class="panel-title">
 					<a data-toggle="collapse" class="sub" data-parent="#accordion"
 						href="#collapse2">Item toevoegen</a>
 				</h4>
-			</div>
-			<div id="collapse2" class="panel-collapse collapse">
-				<div class="panel-body" style="padding-top: 15px !important;">
-<!-- zie item.js -->
-					<form enctype="multipart/form-data" class="sw-form clearfix"
-						id="create-form" action="/categories/profileCreate" method="post">
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body" style="padding-top: 15px !important;">
+                    <!-- zie item.js -->
+                    <form enctype="multipart/form-data" class="sw-form clearfix" id="create-form" action="/categories/profileCreate" method="post">
 
-					
 
-						<div class="form-group has-feedback" id="cat_row">
-							<div class="col-sm-12">
-								<div class="input-group">
-									<!--<span class="input-group-addon">1</span>-->
-									<div>
-										<input placeholder="www.linkvanjouwitem.nl"
-											class="form-control" autocomplete="off" id="Categories_link"
-											size="40" maxlength="250" name="Categories[link]" type="text">
-									
-									</div>
-									<span class="input-group-addon"  rel="tooltip" title="Plaats hier de link van het item dat je wilt toevoegen."><i class="fa fa-question-circle" id="tooltip" data-original-title=""></i></span>
-								</div>
 
-							</div>
-						</div>
+                        <div class="form-group has-feedback" id="cat_row">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <!--<span class="input-group-addon">1</span>-->
+                                    <div>
+                                        <input placeholder="www.linkvanjouwitem.nl" class="form-control" autocomplete="off" id="Categories_link" size="40" maxlength="250" name="Categories[link]" type="text">
 
-						<!-- Titel -->
-						<div class="form-group has-feedback">
-							<div class="col-sm-12">
-								<div class="input-group">
-									<div>
-										<input placeholder="Schrijf een titel voor je nieuwe item"
-											id="Categories_name" autocomplete="off"
-											class="form-control title-field" size="40"
-											name="Categories[name]" type="text" maxlength="40">
-									</div>
-									<span class="input-group-addon" rel="tooltip" title="De titel van dit item wordt getoond in de navigatie. Max. 40 karakters.">
+                                    </div>
+                                    <span class="input-group-addon" rel="tooltip" title="Plaats hier de link van het item dat je wilt toevoegen."><i class="fa fa-question-circle" id="tooltip" data-original-title=""></i></span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Titel -->
+                        <div class="form-group has-feedback">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <div>
+                                        <input placeholder="Schrijf een titel voor je nieuwe item" id="Categories_name" autocomplete="off" class="form-control title-field" size="40" name="Categories[name]" type="text" maxlength="40">
+                                    </div>
+                                    <span class="input-group-addon" rel="tooltip" title="De titel van dit item wordt getoond in de navigatie. Max. 40 karakters.">
 										<i class="fa fa-question-circle" id="tooltip"  data-original-title=""></i>
 									</span>
-								</div>
-								<div class="counter"><span id="namecounter"></span>/40</div>
-							</div>
+                                </div>
+                                <div class="counter"><span id="namecounter"></span>/40</div>
+                            </div>
 
-						</div>
-						<!-- description -->
-
-
-						<div class="form-group has-feedback" id="desc">
-							<div id="descr" class="col-sm-6 col-md-8">
-
-								<div class="input-group">
-									<div>
-										<textarea
-											placeholder="Wat is er zo interessant aan dit item? (Verplicht)"
-											rows="7" cols="5" id="Categories_recommendation"
-											class="form-control description"
-											name="Categories[recommendation]" maxlength="100"></textarea>
-									
-									</div>
-									<span class="input-group-addon"  rel="tooltip" title="Beschrijf waarom deze categorie interessant is. Max. 100 karakters."><i class="fa fa-question-circle" id="tooltip" data-original-title=""></i></span>
-								</div>
-								<div class="counter"><span id="recommendationcounter"></span>/100</div>
-
-							</div>
-						</div>
+                        </div>
+                        <!-- description -->
 
 
-						<br>
-						<div class="form-group">
-							<div class="col-sm-12">
-								<button class="btn btn-primary btn-fw" id="btn_create">Voeg
-									toe</button>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="line" style="margin-top: 5px; margin-bottom: 20px;"></div>
-						</div>
+                        <div class="form-group has-feedback" id="desc">
+                            <div id="descr" class="col-sm-6 col-md-8">
 
-					</form>
+                                <div class="input-group">
+                                    <div>
+                                        <textarea placeholder="Wat is er zo interessant aan dit item? (Verplicht)" rows="7" cols="5" id="Categories_recommendation" class="form-control description" name="Categories[recommendation]" maxlength="100"></textarea>
+
+                                    </div>
+                                    <span class="input-group-addon" rel="tooltip" title="Beschrijf waarom deze categorie interessant is. Max. 100 karakters."><i class="fa fa-question-circle" id="tooltip" data-original-title=""></i></span>
+                                </div>
+                                <div class="counter"><span id="recommendationcounter"></span>/100</div>
+
+                            </div>
+                        </div>
 
 
+                        <input name="Categories[global]" id="Categories_global" type="hidden" value="EN">
+
+                        <input name="Categories[local]" id="Categories_local" type="hidden" value="EN">
+
+                        <br>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button class="btn btn-primary btn-fw" id="btn_create">Voeg toe
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="line" style="margin-top: 5px; margin-bottom: 20px;"></div>
+                        </div>
+
+                    </form>
 
 
 
 
-				</div>
-			</div>
-		</div>
-		<div class="panel panel-default login">
-			<div class="panel-heading">
-				<h4 class="panel-title">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default login">
+            <div class="panel-heading">
+                <h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#collapse3">Inloggen</a>
 				</h4>
-			</div>
-			<div id="collapse3" class="panel-collapse collapse in">
-			<!-- zie login.js -->
-				<div class="panel-body">
-					<form class="sw-form minimal" id="login_form554be769ec78a"
-						action="https://student.world/user/login" method="post">
+            </div>
+            <div id="collapse3" class="panel-collapse collapse in">
+                <!-- zie login.js -->
+                <div class="panel-body">
+                    <form class="sw-form minimal" id="login_form554be769ec78a" action="https://student.world/user/login" method="post">
 
-						<div class="errorSummary alert alert-warning"
-							style="display: none;"></div>
+                        <div class="errorSummary alert alert-warning" style="display: none;"></div>
 
 
-						<div class="form-group">
-							<label class="internet_explorer" for="username">Your
-								Email</label> <input id="username" placeholder="Email"
-								autocomplete="off" autocapitalize="off" class="form-control"
-								name="UserLogin[username]" type="text">
-						</div>
-						<br>
-						<div class="form-group">
-							<label class="internet_explorer" for="UserLogin_password">Password</label>
-							<input placeholder="Password" autocomplete="off"
-								autocapitalize="off" class="form-control"
-								name="UserLogin[password]" id="UserLogin_password"
-								type="password">
-						</div>
+                        <div class="form-group">
+                            <label class="internet_explorer" for="username">Your Email
+                            </label>
+                            <input id="username" placeholder="Email" autocomplete="off" autocapitalize="off" class="form-control" name="UserLogin[username]" type="text">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="internet_explorer" for="UserLogin_password">Password</label>
+                            <input placeholder="Password" autocomplete="off" autocapitalize="off" class="form-control" name="UserLogin[password]" id="UserLogin_password" type="password">
+                        </div>
 
-						<button class="btn btn-primary btn-fw" id="btn_start554be769ec78a">LOGIN
-							TO STUDENT.WORLD</button>
-						<div class="row rememberMe">
-							<p class="hint"></p>
-							<div class="clearfix meta">
+                        <button class="btn btn-primary btn-fw" id="btn_start554be769ec78a">LOGIN TO STUDENT.WORLD</button>
+                        <div class="row rememberMe">
+                            <p class="hint"></p>
+                            <div class="clearfix meta">
 
-								<div class="container">
-									<label class="small rememberMe" for="Userlogin_rememberMe"><input
-										id="ytUserLogin_rememberMe" type="hidden" value="0"
-										name="UserLogin[rememberMe]"><input class="rememberMe"
-										checked="checked" name="UserLogin[rememberMe]"
-										id="UserLogin_rememberMe" value="1" type="checkbox">
-										Keep me logged in</label>
-								</div>
+                                <div class="container">
+                                    <label class="small rememberMe" for="Userlogin_rememberMe">
+                                        <input id="ytUserLogin_rememberMe" type="hidden" value="0" name="UserLogin[rememberMe]">
+                                        <input class="rememberMe" checked="checked" name="UserLogin[rememberMe]" id="UserLogin_rememberMe" value="1" type="checkbox"> Keep me logged in</label>
+                                </div>
 
-							</div>
-						</div>
+                            </div>
+                        </div>
 
 
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
+
 </html>
