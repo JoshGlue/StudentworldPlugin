@@ -1,7 +1,7 @@
 /* Dit javascript bestand draait op de achtergrond.
  * Dit script is verantwoordelijk voor het ophalen van nieuwe notificaties,
  *  als de gebruiker niet met de plugin bezig is.
- * 
+ *
  *  */
 function MyExtension() {
     var self = this;
@@ -18,7 +18,7 @@ function MyExtension() {
         height: 620
     });
     // hier wordt om de zoveel tijd gekeken of er nieuwe notificaties zijn
-    window.setInterval(function() {
+    window.setInterval(function () {
         getNotificationsBG();
     }, interval);
 
@@ -37,14 +37,15 @@ function MyExtension() {
         $
             .getJSON(
                 'http://student.world/notifications/default/notifications',
-                function(json) {
+                function (json) {
                     /*
                      * checkt of er een goed json bestand wordt
                      * opgehaald. De code 1 betekent dat het goed gaat.
                      * Code 3 betekent dat iemand niet in is gelogd.
-                     * 
+                     *
                      */
                     if (json.status == 1) {
+                        console.log("ben er");
                         // haalt het aantal nieuwe notificaties op
                         var count = parseInt(json.result.count);
                         // zet de achtergrondkleur van de badge.
@@ -98,46 +99,45 @@ function MyExtension() {
                             if (json.result.messages[i].deeplink_id != null) {
                                 link += "?ref=" + json.result.messages[i].deeplink_id;
                             }
-							
-							
-						
-							
+
+
+
+
                             // Hier wordt gekeken of een
                             // notificatie-popup al een keer is getoond
                             // aan de gebruiker. -1 wordt teruggegeven
                             // als het ID niet voorkomt in de interne
                             // lijst.
-                            if ($.inArray(ID, notificatedIDs) == -1)
-							{
-							
-							var title = 'Student.world';
-							if (json.result.messages[i].title != undefined){
-							title = title + ' - ' + json.result.messages[i].title;
-							}
+                            if ($.inArray(ID, notificatedIDs) == -1) {
+
+                                var title = 'Student.world';
+                                if (json.result.messages[i].title != undefined) {
+                                    title = title + ' - ' + json.result.messages[i].title;
+                                }
                                 kango.ui.notifications
-                                .show(
-                                    title,
-                                    json.result.messages[i].description,
-                                    image,
-                                    function() {
-                                        kango.browser.tabs
-                                            .create({
-                                                url: link
-                                            });
-
-                                        $
-                                            .get(
-                                                "http://student.world/notifications/default/notified",
-                                                function(
-                                                    data) {
-
+                                    .show(
+                                        title,
+                                        json.result.messages[i].description,
+                                        image,
+                                        function () {
+                                            kango.browser.tabs
+                                                .create({
+                                                    url: link
                                                 });
-                                        getNotificationsBG();
-                                    });
-                            // zet de getoonde notificatie-popup in de
-                            // internelijst
-                            kango.storage.setItem(ID, 'notificatie');
-}
+
+                                            $
+                                                .get(
+                                                    "http://student.world/notifications/default/notified",
+                                                    function (
+                                                        data) {
+
+                                                    });
+                                            getNotificationsBG();
+                                        });
+                                // zet de getoonde notificatie-popup in de
+                                // internelijst
+                                kango.storage.setItem(ID, 'notificatie');
+                            }
                         }
 
                     } else {

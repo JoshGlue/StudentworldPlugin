@@ -1,0 +1,59 @@
+{
+    "status": "1",
+    "description": "",
+    "result": {
+        "timestamp": "1435837490",
+        "count": "0",
+        "messages": [{
+            "id": "17305",
+            "read": true,
+            "description": "Congratz you reached level 8. Keep up the good work!",
+            "title": "Level up!",
+            "type": "150",
+            "date": "2015-06-30T12:15:15Z",
+            "user_img": null
+        }, {
+            "id": "17188",
+            "read": true,
+            "description": "In the category TV Series!",
+            "title": "Top contributor!",
+            "type": "141",
+            "date": "2015-06-28T04:00:32Z",
+            "link": "http:\/\/student.world\/categories\/info?node_id=419635&show_tab=statistics",
+            "deeplink_id": "419635",
+            "icon_link": "http:\/\/student.world\/categories\/info?node_id=419635&show_tab=statistics",
+            "deeplink_icon_id": "419635",
+            "user_img": "http:\/\/student.world\/images\/default_user_v2.jpg"
+        }, {
+            "id": "17128",
+            "read": true,
+            "description": "Erik on BattleBots 2015 - Biteforce vs Warhead",
+            "title": "New like",
+            "type": "10",
+            "date": "2015-06-27T10:18:21Z",
+            "deeplink_id": "428006",
+            "deeplink_icon_id": "420373",
+            "user_img": "https:\/\/uploadstruct.s3.amazonaws.com\/images\/ErikLentink\/thumb.jpg"
+        }, {
+            "id": "11054",
+            "read": true,
+            "description": "3<\/strong> of your proposals finished. Check your timeline",
+            "title": "Action finished",
+            "type": "70",
+            "date": "2015-06-26T12:10:56Z",
+            "link": "http:\/\/student.world\/actions\/update?id=19854",
+            "deeplink_id": "428005",
+            "icon_link": "http:\/\/student.world\/actions\/update?id=19854",
+            "deeplink_icon_id": "428005",
+            "user_img": null
+        }, {
+            "id": "16971",
+            "read": true,
+            "description": "You returned to level 7. Good job!",
+            "title": "Level up!",
+            "type": "152",
+            "date": "2015-06-25T13:15:08Z",
+            "user_img": null
+        }]
+    }
+}

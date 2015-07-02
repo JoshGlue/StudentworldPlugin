@@ -1,0 +1,62 @@
+{
+    "status": "1",
+    "description": "",
+    "result": {
+        "timestamp": "1435837555",
+        "count": "0",
+        "messages": [{
+            "id": "16831",
+            "read": true,
+            "description": "Frank volgt je nu!",
+            "title": "Nieuwe volger",
+            "type": "20",
+            "date": "2015-06-24T11:01:00Z",
+            "deeplink_id": "419238",
+            "deeplink_icon_id": "419238",
+            "user_img": "https:\/\/uploadstruct.s3.amazonaws.com\/images\/FrankBrinkkemper\/thumb.jpg"
+        }, {
+            "id": "16827",
+            "read": true,
+            "description": "Frank heeft op je reactie gereageerd",
+            "title": "Nieuwe reactie",
+            "type": "66",
+            "date": "2015-06-24T10:54:02Z",
+            "link": "http:\/\/student.world\/categories\/info?node_id=426665",
+            "deeplink_id": "426665",
+            "deeplink_icon_id": "419238",
+            "user_img": "https:\/\/uploadstruct.s3.amazonaws.com\/images\/FrankBrinkkemper\/avatar.jpg"
+        }, {
+            "id": "16826",
+            "read": true,
+            "description": "Frank heeft op je reactie gereageerd",
+            "title": "Nieuwe reactie",
+            "type": "66",
+            "date": "2015-06-24T10:50:59Z",
+            "link": "http:\/\/student.world\/categories\/info?node_id=427789",
+            "deeplink_id": "427789",
+            "deeplink_icon_id": "419238",
+            "user_img": "https:\/\/uploadstruct.s3.amazonaws.com\/images\/FrankBrinkkemper\/avatar.jpg"
+        }, {
+            "id": "16825",
+            "read": true,
+            "description": "Frank heeft op je reactie gereageerd",
+            "title": "Nieuwe reactie",
+            "type": "66",
+            "date": "2015-06-24T10:46:57Z",
+            "link": "http:\/\/student.world\/categories\/info?node_id=426751",
+            "deeplink_id": "426751",
+            "deeplink_icon_id": "419238",
+            "user_img": "https:\/\/uploadstruct.s3.amazonaws.com\/images\/FrankBrinkkemper\/avatar.jpg"
+        }, {
+            "id": "16824",
+            "read": true,
+            "description": "Frank op Cristiano Ronaldo",
+            "title": "Nieuwe vind ik leuk",
+            "type": "10",
+            "date": "2015-06-24T10:46:46Z",
+            "deeplink_id": "426751",
+            "deeplink_icon_id": "419238",
+            "user_img": "https:\/\/uploadstruct.s3.amazonaws.com\/images\/FrankBrinkkemper\/thumb.jpg"
+        }]
+    }
+}
