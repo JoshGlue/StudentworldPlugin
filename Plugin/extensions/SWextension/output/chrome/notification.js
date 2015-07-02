@@ -173,14 +173,25 @@ function getNotifications(callback) {
             for (var i = 0; i < messages.length; i++) {
 
                 console.log("test4");
-                var image = '<div style="    width: 50px;    height: 50px;    border-radius: 50%;    border: 1px solid #999;    padding: 14px;    padding-left: 17px;"><span><i class="' + nTypesMessage[messages[i].type].iconClass + '"></i></span></div>';
+                var iconClass
+                if (nTypesMessage[messages[i].type] != undefined) {
+                    iconClass = nTypesMessage[messages[i].type].iconClass;
+                } else {
+                    iconClass = nTypesMessage[0].iconClass;
+                }
+
+                var image = '<div style="    width: 50px;    height: 50px;    border-radius: 50%;    border: 1px solid #999;    padding: 14px;    padding-left: 17px;"><span><i class="' + iconClass + '"></i></span></div>';
                 var link = 'http://student.world';
                 if (messages[i].user_img != null) {
                     image = '<img src="' + messages[i].user_img + '" class="img-circle imagenotification" />';
                 }
                 if (messages[i].deeplink_id != undefined) {
+                    console.log("test5");
+
                     link += "?ref=" + messages[i].deeplink_id;
                 }
+                console.log("test6");
+
                 var hoofdnode = $('<div class="notification"></div>').text("");
                 var img = '<div class="imagenotification">' + image + '</div>';
                 var desc = '';
